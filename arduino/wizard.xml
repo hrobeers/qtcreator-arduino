@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**************************************************************************
+**
+** This file is part of Qt Creator
+**
+** Copyright (c) 2011 Nokia Corporation and/or its subsidiary(-ies).
+**
+** Contact: Nokia Corporation (info@qt.nokia.com)
+**
+**
+** GNU Lesser General Public License Usage
+**
+** This file may be used under the terms of the GNU Lesser General Public
+** License version 2.1 as published by the Free Software Foundation and
+** appearing in the file LICENSE.LGPL included in the packaging of this file.
+** Please review the following information to ensure the GNU Lesser General
+** Public License version 2.1 requirements will be met:
+** http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html.
+**
+** In addition, as a special exception, Nokia gives you certain additional
+** rights. These rights are described in the Nokia Qt LGPL Exception
+** version 1.1, included in the file LGPL_EXCEPTION.txt in this package.
+**
+** Other Usage
+**
+** Alternatively, this file may be used in accordance with the terms and
+** conditions contained in a signed written agreement between you and Nokia.
+**
+** If you have questions regarding the use of this file, please contact
+** Nokia at qt-info@nokia.com.
+**
+**************************************************************************/
+-->
+
+<wizard version="1" kind="project"
+        class="" firstpage="10"
+        id="A.Arduino" category="B.AVR">
+    <icon>arduino_logo.png</icon>
+    <description>Creates an Arduino project based on the makefile from the arduino-mk package.</description>
+    <displayname>Arduino Project</displayname>;
+    <displaycategory>AVR</displaycategory>
+    <files>
+        <file source="project.creator"  target="%ProjectName%.creator" openproject="true"/>
+        <file source="project.includes" target="%ProjectName%.includes"/>
+        <file source="project.config"   target="%ProjectName%.config"/>
+        <file source="project.files"    target="%ProjectName%.files"/>
+        
+        <file source="src/main.cpp"    target="src/main.cpp" openeditor="true"/>
+        <file source="src/Makefile"    target="src/Makefile"/>        
+    </files>
+    <!-- Create a 2nd wizard page with parameters -->
+    <fieldpagetitle>Project Parameters</fieldpagetitle>
+    <fields>
+        <field mandatory="true" name="ARDUINO_DIR">
+            <fieldcontrol class="QLineEdit" validator='^[^"]+$'
+                          defaulttext="/usr/share/arduino/" />
+            <fielddescription>Arduino Path:</fielddescription>
+        </field>
+	<field name="BOARD_TAG">
+            <fieldcontrol class="QComboBox" defaultindex="0">
+                <comboentries>
+                    <comboentry value="uno">
+                        <comboentrytext>UNO</comboentrytext>
+                    </comboentry>
+                    <comboentry value="atmega328">
+                        <comboentrytext>Arduino Duemilanove w/ ATmega328</comboentrytext>
+                    </comboentry>
+                    <comboentry value="diecimila">
+                        <comboentrytext>Arduino Diecimila or Duemilanove w/ ATmega168</comboentrytext>
+                    </comboentry>
+                    <comboentry value="nano328">
+                        <comboentrytext>Arduino Nano w/ ATmega328</comboentrytext>
+                    </comboentry>
+                    <comboentry value="nano">
+                        <comboentrytext>Arduino Nano w/ ATmega168</comboentrytext>
+                    </comboentry>
+                    <comboentry value="mega2560">
+                        <comboentrytext>Arduino Mega 2560 or Mega ADK</comboentrytext>
+                    </comboentry>
+                    <comboentry value="mega">
+                        <comboentrytext>Arduino Mega (ATmega1280)</comboentrytext>
+                    </comboentry>
+                    <comboentry value="mini328">
+                        <comboentrytext>Arduino Mini w/ ATmega328</comboentrytext>
+                    </comboentry>
+                    <comboentry value="mini">
+                        <comboentrytext>Arduino Mini w/ ATmega168</comboentrytext>
+                    </comboentry>
+                    <comboentry value="ethernet">
+                        <comboentrytext>Arduino Ethernet</comboentrytext>
+                    </comboentry>
+                    <comboentry value="fio">
+                        <comboentrytext>Arduino Fio</comboentrytext>
+                    </comboentry>
+                    <comboentry value="bt328">
+                        <comboentrytext>Arduino BT w/ ATmega328</comboentrytext>
+                    </comboentry>
+                    <comboentry value="bt">
+                        <comboentrytext>Arduino BT w/ ATmega168</comboentrytext>
+                    </comboentry>
+                    <comboentry value="lilypad328">
+                        <comboentrytext>LilyPad Arduino w/ ATmega328</comboentrytext>
+                    </comboentry>
+                    <comboentry value="lilypad">
+                        <comboentrytext>LilyPad Arduino w/ ATmega168</comboentrytext>
+                    </comboentry>
+                    <comboentry value="pro5v328">
+                        <comboentrytext>Arduino Pro or Pro Mini (5V, 16 MHz) w/ ATmega328</comboentrytext>
+                    </comboentry>
+                    <comboentry value="pro5v">
+                        <comboentrytext>Arduino Pro or Pro Mini (5V, 16 MHz) w/ ATmega168</comboentrytext>
+                    </comboentry>
+                    <comboentry value="pro328">
+                        <comboentrytext>Arduino Pro or Pro Mini (3.3V, 8 MHz) w/ ATmega328</comboentrytext>
+                    </comboentry>
+                    <comboentry value="pro">
+                        <comboentrytext>Arduino Pro or Pro Mini (3.3V, 8 MHz) w/ ATmega168</comboentrytext>
+                    </comboentry>
+                    <comboentry value="atmega168">
+                        <comboentrytext>Arduino NG or older w/ ATmega168</comboentrytext>
+                    </comboentry>
+                    <comboentry value="atmega8">
+                        <comboentrytext>Arduino NG or older w/ ATmega8</comboentrytext>
+                    </comboentry>
+                </comboentries>
+            </fieldcontrol>
+            <fielddescription>Board:</fielddescription>
+        </field>
+        <field mandatory="false" name="ARDUINO_LIBS">
+            <fieldcontrol class="QLineEdit" validator='^[^"]+$'
+                          defaulttext=" " />
+            <fielddescription>Libraries:</fielddescription>
+        </field>
+        <field mandatory="false" name="ARDUINO_PORT">
+            <fieldcontrol class="QLineEdit" validator='^[^"]+$'
+                          defaulttext="/dev/ttyACM0" />
+            <fielddescription>Serial port:</fielddescription>
+        </field>
+    </fields>
+</wizard>
