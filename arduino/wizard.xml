@@ -47,7 +47,8 @@
         <file source="project.files"    target="%ProjectName%.files"/>
         
         <file source="src/main.cpp"    target="src/main.cpp" openeditor="true"/>
-        <file source="src/Makefile"    target="src/Makefile"/>        
+        <file source="src/Makefile"    target="src/Makefile"/>
+        <file source="libraries/README"    target="libraries/README"/>
     </files>
     <!-- Create a 2nd wizard page with parameters -->
     <fieldpagetitle>Project Parameters</fieldpagetitle>

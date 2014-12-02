@@ -1,2 +1,4 @@
 src/Makefile
 src/main.cpp
+libraries/README
+libraries/*/*
