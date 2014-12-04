@@ -43,13 +43,16 @@
     <files>
         <file source="project.creator"  target="%ProjectName%.creator" openproject="true"/>
         <file source="project.includes" target="%ProjectName%.includes"/>
-        <file source="project.config"   target="%ProjectName%.config"/>
         <file source="project.files"    target="%ProjectName%.files"/>
         
         <file source="src/main.cpp"    target="src/main.cpp" openeditor="true"/>
         <file source="src/Makefile"    target="src/Makefile"/>
         <file source="libraries/README"    target="libraries/README"/>
     </files>
+    <generatorscript binary="set_arduino_version.sh">
+        <argument value="--arduino_dir=%ARDUINO_DIR%"/>
+        <argument value="--project_name=%ProjectName%"/>
+    </generatorscript>
     <!-- Create a 2nd wizard page with parameters -->
     <fieldpagetitle>Project Parameters</fieldpagetitle>
     <fields>
