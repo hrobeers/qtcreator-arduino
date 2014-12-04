@@ -2,6 +2,7 @@
 
 ARDUINO_DIR     = %ARDUINO_DIR%
 TARGET          = output
+USER_LIB_PATH   = ../libraries
 ARDUINO_LIBS    = %ARDUINO_LIBS%
 
 
